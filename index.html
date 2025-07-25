@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TTS Voice Cloning Demo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Text-to-Speech Voice Cloning Demo</h1>
+        <p class="subtitle">Current WebSim TTS API limitations vs. ideal voice cloning interface</p>
+        
+        <div class="demo-section">
+            <h2>Current Available Options</h2>
+            <div class="tts-options">
+                <button class="voice-btn" data-voice="en-male">🇺🇸 Male</button>
+                <button class="voice-btn" data-voice="en-female">🇺🇸 Female</button>
+                <button class="voice-btn" data-voice="es-male">🇪🇸 Male</button>
+                <button class="voice-btn" data-voice="ja-female">🇯🇵 Female</button>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2>Voice Cloning (Conceptual)</h2>
+            <div class="voice-clone-section">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">📁</div>
+                    <p>Drop audio file here or click to upload</p>
+                    <p class="file-info" id="fileInfo"></p>
+                    <input type="file" id="audioFile" accept="audio/*" hidden>
+                </div>
+                
+                <div class="clone-status" id="cloneStatus">
+                    <div class="status-icon">🔒</div>
+                    <p>Voice cloning requires API support for audio file input</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2>Test Text</h2>
+            <textarea id="textInput" placeholder="Enter text to synthesize...">Hello! This is a demonstration of text-to-speech synthesis. Voice cloning would allow custom voices from audio samples.</textarea>
+            <button id="synthesizeBtn" class="primary-btn">Synthesize Speech</button>
+        </div>
+
+        <div class="audio-section" id="audioSection" style="display: none;">
+            <audio id="audioPlayer" controls></audio>
+            <button id="downloadBtn" class="secondary-btn">Download</button>
+        </div>
+
+        <div class="info-section">
+            <h3>API Limitations</h3>
+            <ul>
+                <li>❌ No audio file upload for voice cloning</li>
+                <li>✅ Predefined voices available</li>
+                <li>✅ ElevenLabs voice ID support</li>
+                <li>❌ Custom voice training</li>
+            </ul>
+        </div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4c6229722a6346bc8eb5cb0e5eae5d41","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
+
